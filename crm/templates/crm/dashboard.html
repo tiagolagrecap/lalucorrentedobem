@@ -1,0 +1,50 @@
+{%  extends 'crm/main.html' %}
+
+{% block content %}
+
+{%  include 'crm/status.html' %}
+
+<div class="row">
+	<div class="col">
+		<div class="card card-body">
+			<form method="get">
+				{{myFilter.form}}
+
+		    <button class="btn btn-primary" type="submit">Search</button>
+		  </form>
+		</div>
+	</div>
+
+</div>
+
+		<hr>
+		<div class="card card-body">
+			<a class="btn btn-primary  btn-sm btn-block" href="{% url 'create_customer' %}">NOVA FAMILIA </a>
+			<table class="table table-sm">
+				<tr>
+					<th>Nome</th>
+					<th>Telefone</th>
+					<th>Data</th>
+					<th>Andamento</th>
+					<th>Atualizar</th>
+					<th>Mais</th>
+
+					</tr>
+					{% for customer in customers %}
+				<tr>
+					<td>{{customer.name}}</td>
+					<td>{{customer.phone}}</td>
+					<td>{{customer.date_created}}</td>
+					<td>{{customer.status}}</td>
+					<td><a class="btn btn-sm btn-info" href="{% url 'update_customer' customer.id %}">Atualizar</a> </td>
+					<td><a class="btn btn-sm btn-info" href="{% url 'customer' customer.id %}">Mais</a> </td>
+				</tr>
+				{% endfor %}
+
+			</table>
+		</div>
+	</div>
+
+</div>
+
+{% endblock %}

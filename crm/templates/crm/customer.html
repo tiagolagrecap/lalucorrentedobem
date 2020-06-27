@@ -1,0 +1,67 @@
+{%  extends 'crm/main.html' %}
+
+{% block content %}
+
+	<br>
+
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+			<h5>Customer:</h5>
+			<hr>
+			<a class="btn btn-outline-info  btn-sm btn-block" href="">Update Customer</a>
+			<a class="btn btn-outline-danger  btn-sm btn-block" href="">Delete Customer</a>
+
+		</div>
+	</div>
+
+	<div class="col-md">
+		<div class="card card-body">
+			<h5>Contact Information</h5>
+			<hr>
+			<p>Nome: {{customer.name}} </p>
+			<p>Phone: {{customer.phone}} </p>
+		</div>
+	</div>
+
+
+</div>
+
+
+
+
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+			<table class="table table-sm">
+				<tr>
+					<th>Família </th>
+					<th>Telfone</th>
+					<th>Data</th>
+					<th>Info</th>
+					<th>Andamento</th>
+					<th>Atualizar</th>
+					<th>Remover</th>
+
+
+				</tr>
+
+
+				<tr>
+					<td>{{customer.name}}</td>
+					<td>{{customer.phone}}</td>
+					<td>{{customer.date_created}}</td>
+					<td>{{customer.text}}</td>
+					<td>{{customer.status}}</td>
+					<td><a class="btn btn-sm btn-info" href="{% url 'update_customer' customer.id %}">Update</a> </td>
+					<td><a class="btn btn-sm btn-danger" href="{% url 'delete_customer' customer.id %}">Remover</a> </td>
+
+
+				</tr>
+
+			</table>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
