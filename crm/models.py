@@ -1,5 +1,5 @@
 from django.db import models
-from phone_field import PhoneField
+
 
 # Create your models here.
 
@@ -12,7 +12,7 @@ class Customer(models.Model):
     )
 
     name = models.CharField(max_length=200, null=True)
-    phone = PhoneField(null=True, E164_only=False, blank=True)
+    phone = models.CharField(max_length=200, null=True)
     date_created = models.DateTimeField(auto_now_add=True, null=True, blank=True)
     refer = models.CharField(max_length=20, null=True, blank=True)
     contact = models.CharField(max_length=20, null=True, blank=True)
