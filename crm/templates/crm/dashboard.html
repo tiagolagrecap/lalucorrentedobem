@@ -10,7 +10,7 @@
 			<form method="get">
 				{{myFilter.form}}
 
-		    <button class="btn btn-primary" type="submit">Search</button>
+		    <button class="btn btn-primary" type="submit">Procurar</button>
 		  </form>
 		</div>
 	</div>
@@ -25,6 +25,8 @@
 					<th>Nome</th>
 					<th>Telefone</th>
 					<th>Data</th>
+					<th>Indicação</th>
+					<th>Contato LALU</th>
 					<th>Andamento</th>
 					<th>Atualizar</th>
 					<th>Mais</th>
@@ -35,6 +37,8 @@
 					<td>{{customer.name}}</td>
 					<td>{{customer.phone}}</td>
 					<td>{{customer.date_created}}</td>
+					<td>{{customer.refer}}</td>
+					<td>{{customer.contact}}</td>
 					<td>{{customer.status}}</td>
 					<td><a class="btn btn-sm btn-info" href="{% url 'update_customer' customer.id %}">Atualizar</a> </td>
 					<td><a class="btn btn-sm btn-info" href="{% url 'customer' customer.id %}">Mais</a> </td>
