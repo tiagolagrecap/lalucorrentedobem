@@ -11,7 +11,7 @@ from django.forms import inlineformset_factory
 
 
 
-@staff_member_required
+
 def home(request):
     customers = Customer.objects.all()
 
